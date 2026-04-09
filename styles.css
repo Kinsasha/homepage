@@ -32,6 +32,7 @@ header {
     justify-content: center;
     border: 0.2rem white solid;
     border-radius: 15px;
+    transition: all 0.5s ease-in;
   }
   img {
     height: auto;
@@ -59,6 +60,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.5s ease-in;
 
     .iconsContainer > button {
       background-color: white;
@@ -108,6 +110,7 @@ header {
   background-color: white;
   color: black;
   padding: 0.5rem 0.5rem 0 0.5rem;
+  transition: all 0.5s ease-in;
 }
 .card > img {
   height: clamp(15rem, 20rem, 40rem);
@@ -168,6 +171,7 @@ footer {
     max-width: 30rem;
     border-radius: 50%;
     border: 0.5rem rgb(255, 0, 0) solid;
+    transition: all 0.5s ease-in;
   }
   .closingImgContainer > img {
     height: 100%;
@@ -180,6 +184,11 @@ button {
   width: 4rem;
   padding: 0.3rem;
   border-radius: 0.5rem;
+  transition: all 0.5s ease-in;
+}
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(151, 151, 151);
 }
 i {
   color: white;
@@ -193,6 +202,7 @@ i {
 .closer {
   color: black;
 }
+
 @media (max-width: 600px) {
   footer {
     grid-auto-flow: row;
@@ -207,4 +217,10 @@ i {
   .textContainer {
     width: 70vw;
   }
+}
+.card:hover,
+.textContainer:hover,
+.imageContainer:hover,
+.closingImgContainer:hover {
+  transform: scale(1.05);
 }
