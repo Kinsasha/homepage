@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+:root {
+  --color-bg: rgb(4, 0, 131);
+  --color-bg-header: linear-gradient(
+    165deg,
+    rgb(0, 0, 0) 50%,
+    rgb(4, 0, 131) 50%
+  );
+  --color-text: rgb(225, 223, 204);
+  --color-border: rgb(225, 220, 170);
+  --color-minortexts: rgb(59, 59, 59);
+}
 html {
   font-size: 62.5%;
 }
@@ -5,16 +20,27 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: rgb(194, 194, 194);
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 2rem;
 }
 
+svg {
+  height: 100px;
+  width: 100px;
+  /* background-color: white; */
+}
+button {
+  i {
+    width: 100%;
+    height: 100%;
+  }
+}
 header {
-  background: linear-gradient(165deg, rgb(0, 0, 0) 50%, rgb(194, 194, 194) 50%);
+  background: var(--color-bg-header);
 }
 
 .container {
@@ -22,45 +48,55 @@ header {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  gap: 1rem;
+  border-bottom: 0.2rem var(--color-border) solid;
 
   .imageContainer {
-    width: 40rem;
-    min-width: 15rem;
-    height: clamp(20rem, 50rem, 80rem);
+    width: clamp(20vw, 20vw + 5rem, 60vw);
+    height: clamp(20rem, 30rem + 5vh, 80rem);
     position: relative;
     display: flex;
-    justify-content: center;
-    border: 0.2rem white solid;
-    border-radius: 15px;
+    border: 0.2rem var(--color-border) solid;
+    border-radius: 50%;
+    border: 1rem red solid;
     transition: all 0.5s ease-in;
   }
   img {
     height: auto;
     width: 100%;
-    border-radius: 15px;
+    border-radius: inherit;
+    object-fit: fill;
   }
   .nameContainer {
-    color: rgb(0, 0, 0);
+    letter-spacing: 4px;
     position: absolute;
     bottom: 10%;
-    background-color: rgb(255, 255, 255, 0.7);
+    border: 0.2rem red solid;
     width: 100%;
-    text-align: center;
+    background-color: rgb(9, 9, 9);
+    height: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .textContainer {
+    width: clamp(20vw, 40vw, 60vw);
     background-color: black;
-    height: clamp(20rem, 40rem, 60rem);
-    max-width: 80rem;
     border-radius: 15px;
     padding: 3rem;
-    border: 0.2rem white solid;
-    border-left: none;
-
+    background-color: transparent;
+    border: 0.2rem red solid;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.5s ease-in;
+    word-spacing: 3px;
+
+    .writeups > p {
+      line-height: 1.25;
+    }
 
     .iconsContainer > button {
       background-color: white;
@@ -84,37 +120,93 @@ header {
     letter-spacing: 0.1rem;
   }
 }
-
-.myWork {
-  border-top: 0.5rem white solid;
+.mySkills {
   font-size: clamp(1rem, 2vw + 1rem, 4rem);
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 70%;
   margin: 0 auto;
-  color: black;
+  margin-bottom: 2rem;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .slidecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    p {
+      margin-bottom: 0;
+      font-size: calc(1.5rem + 1vw);
+      font-family: "Dancing Script", "Times New Roman", Times, serif;
+    }
+
+    .slideBackground {
+      background-color: black;
+      padding: 2rem 0;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .slide {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stack {
+      font-family: "JetBrains Mono", "Fira Code", system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: calc(1rem + 0.5vw);
+      letter-spacing: 2.5px;
+    }
+  }
+}
+.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.myWork {
+  border-top: 0.2rem var(--color-border) solid;
+  font-size: clamp(1rem, 2vw + 1rem, 4rem);
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
 
   .projectCards {
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
   }
 }
 .card {
   border: 1px solid black;
   display: flex;
+  height: clamp(20rem, 30rem + 5rem, 80rem);
   flex-direction: column;
   border-radius: 15px;
-  background-color: white;
+  background-color: var(--color-border);
   color: black;
   padding: 0.5rem 0.5rem 0 0.5rem;
   transition: all 0.5s ease-in;
+  width: 30rem;
 }
 .card > img {
   height: clamp(15rem, 20rem, 40rem);
   width: 100%;
+  border: 1px solid black;
   border-radius: 15px;
 }
 .titleContainer {
@@ -124,7 +216,7 @@ header {
   /* background-color: #000000; */
 
   .title {
-    font-size: clamp(1rem, 1vw + 1rem, 4rem);
+    font-size: clamp(1.5rem, 1vw + 1rem, 4rem);
     padding: 1rem;
     margin: 0;
   }
@@ -135,10 +227,10 @@ header {
   }
 }
 .text {
-  font-size: clamp(0.5rem, 0.7vw + 0.5rem, 2rem);
+  font-size: clamp(1rem, 0.5vw + 0.5rem, 2rem);
   padding: 1.5rem;
   margin-top: 0;
-  color: rgb(59, 59, 59);
+  color: var(--color-minortexts);
   letter-spacing: 0.1rem;
   transform: scaleY(1.1);
 }
@@ -150,7 +242,7 @@ footer {
   padding: 6rem;
   padding-top: 3rem;
   gap: 2rem;
-  border-top: 0.5rem white solid;
+  border-top: 0.5rem var(--color-border) solid;
   background-color: black;
   font-size: clamp(0.7rem, 0.7vw + 0.7rem, 2rem);
 
@@ -187,7 +279,7 @@ button {
   transition: all 0.5s ease-in;
 }
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: rgb(151, 151, 151);
 }
 i {
@@ -206,21 +298,35 @@ i {
 @media (max-width: 600px) {
   footer {
     grid-auto-flow: row;
+    .closingImgContainer {
+      height: 20rem;
+      width: 20rem;
+    }
   }
   .container {
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.5rem;
+
+    .imageContainer {
+      height: clamp(20rem, 25rem, 60rem);
+      width: 50vw;
+      border-radius: 50%;
+
+      img {
+        border-radius: inherit;
+      }
+    }
+    .textContainer {
+      height: clamp(20rem, 30rem, 60rem);
+      width: 60vw;
+    }
   }
-  .imageContainer {
-    max-width: 80vw;
-  }
-  .textContainer {
-    width: 70vw;
+  .text {
   }
 }
 .card:hover,
 .textContainer:hover,
 .imageContainer:hover,
 .closingImgContainer:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
