@@ -97,7 +97,7 @@ const displayPopSkillsets = () => {
 
     li.textContent = data;
 
-    popList.prepend(li);
+    popList.append(li);
   });
 
   popTitleContainer.append(popTitle, closeBtn);
