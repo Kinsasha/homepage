@@ -125,7 +125,7 @@ header {
   .textContainer {
     width: clamp(20vw, 40vw, 60vw);
     border-radius: 15px;
-    padding: 3rem;
+    padding: 4rem 2rem;
     background-color: transparent;
     border: 0.2rem var(--color-border-header) solid;
     display: flex;
