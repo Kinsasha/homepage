@@ -14,22 +14,23 @@
 }
 
 :root {
-  --color-bg: rgb(4, 0, 131);
+  --color-bg: rgb(7, 9, 59);
   --color-header-bg: rgb(0, 0, 0, 0.7);
-  --color-text: rgb(225, 223, 204);
   --text-color-header: rgb(225, 223, 204);
   --color-border: rgb(225, 220, 170);
   --color-border-header: rgb(225, 220, 170);
   --color-minortexts: rgba(0, 0, 0, 0.6);
   --color-card: black;
+  --color-text: rgb(225, 223, 204);
 }
 .light {
   --color-bg: #f7f8fa;
   --color-header-bg: #1e3a5f;
-  --color-text: black;
-  --text-color-header: rgb(225, 223, 204);
+  --text-color-header: rgb(0, 0, 0, 0.7);
   --color-border: rgb(225, 220, 170);
-  --color-border-header: rgb(225, 223, 204);
+  --color-border-header: rgb(225, 220, 170);
+  --color-text: rgb(0, 0, 0);
+  --color-text-light: rgb(225, 223, 204);
 }
 html {
   font-size: 62.5%;
@@ -66,6 +67,7 @@ body {
     svg {
       width: 100%;
       height: 100%;
+      color: black;
     }
   }
 }
@@ -80,9 +82,6 @@ button {
     width: 100%;
     height: 100%;
   }
-}
-header {
-  background: var(--color-header-bg);
 }
 
 .container {
@@ -115,6 +114,7 @@ header {
     border: 0.2rem var(--color-border-header) solid;
     width: 100%;
     background-color: rgb(9, 9, 9);
+    color: #f7f8fa;
     height: 3rem;
 
     display: flex;
@@ -209,7 +209,7 @@ header {
         "Open Sans", "Helvetica Neue", sans-serif;
       font-size: calc(1rem + 0.5vw);
       letter-spacing: 2.5px;
-      color: var(--color-text);
+      color: #f7f8fa;
     }
   }
 }
@@ -341,7 +341,7 @@ footer {
   border-top: 0.5rem var(--color-border) solid;
   background-color: var(--color-header-bg);
   font-size: clamp(0.7rem, 0.7vw + 0.7rem, 2rem);
-  color: var(--text-color-header);
+  color: var(--color-text-light);
 
   .email,
   .whatsapp {
