@@ -15,7 +15,7 @@
 
 :root {
   --color-bg: rgb(7, 9, 59);
-  --color-header-bg: rgb(0, 0, 0, 0.7);
+  --color-footer-bg: rgb(0, 0, 0);
   --text-color-header: rgb(225, 223, 204);
   --color-border: rgb(225, 220, 170);
   --color-border-header: rgb(225, 220, 170);
@@ -25,10 +25,8 @@
 }
 .light {
   --color-bg: #f7f8fa;
-  --color-header-bg: #1e3a5f;
-  --text-color-header: rgb(0, 0, 0, 0.7);
-  --color-border: rgb(225, 220, 170);
-  --color-border-header: rgb(225, 220, 170);
+  --text-color-header: rgb(0, 0, 0);
+  --color-border-header: rgb(0, 0, 0);
   --color-text: rgb(0, 0, 0);
   --color-text-light: rgb(225, 223, 204);
 }
@@ -84,6 +82,10 @@ button {
   }
 }
 
+header {
+  margin-top: 10vh;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -111,7 +113,7 @@ button {
     letter-spacing: 4px;
     position: absolute;
     bottom: 10%;
-    border: 0.2rem var(--color-border-header) solid;
+    border: 0.2rem var(--color-border) solid;
     width: 100%;
     background-color: rgb(9, 9, 9);
     color: #f7f8fa;
@@ -123,14 +125,17 @@ button {
   }
 
   .textContainer {
-    width: clamp(20vw, 40vw, 60vw);
-    border-radius: 15px;
-    padding: 4rem 2rem;
-    background-color: transparent;
-    border: 0.2rem var(--color-border-header) solid;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    width: clamp(20vw, 40vw, 60vw);
+    height: max-content;
+    border-radius: 15px;
+    padding: 2rem;
+    padding-bottom: 6rem;
+    background-color: transparent;
+    border: 0.2rem var(--color-border-header) solid;
     transition: all 0.5s ease-in;
     word-spacing: 3px;
 
@@ -190,7 +195,7 @@ button {
       width: 100%;
       border-radius: 15px;
       cursor: pointer;
-      border: 0.1rem var(--color-border) solid;
+      border: 0.2rem var(--color-border) solid;
     }
     .slideBackground:hover {
       transform: scale(1);
@@ -234,7 +239,7 @@ button {
   border: 0.1rem var(--color-border) solid;
   animation: pop-in 0.3s linear;
 
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 8%;
   transform: translate(-50%, 50%);
@@ -339,7 +344,7 @@ footer {
   padding-top: 3rem;
   gap: 2rem;
   border-top: 0.5rem var(--color-border) solid;
-  background-color: var(--color-header-bg);
+  background-color: var(--color-footer-bg);
   font-size: clamp(0.7rem, 0.7vw + 0.7rem, 2rem);
   color: var(--color-text-light);
 
